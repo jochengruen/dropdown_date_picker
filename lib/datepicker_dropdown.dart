@@ -30,6 +30,8 @@ class DropdownDatePicker extends StatefulWidget {
   ///Default is Current year
   final int? endYear;
 
+  final Color? dropdownColor;
+
   ///width between each drop down
   ///Default is 12.0
   final double width;
@@ -134,6 +136,7 @@ class DropdownDatePicker extends StatefulWidget {
     this.onChangedDay,
     this.onChangedMonth,
     this.onChangedYear,
+    this.dropdownColor,
     this.isDropdownHideUnderline = false,
     this.errorDay = 'Please select day',
     this.errorMonth = 'Please select month',
@@ -501,6 +504,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
       icon: widget.icon ?? const Icon(Icons.expand_more, color: Colors.grey),
       value: monthselVal.isEmpty ? null : monthselVal,
       menuMaxHeight: widget.menuHeight,
+      dropdownColor: widget.dropdownColor,
       onChanged: (value) {
         monthSelected(value);
       },
@@ -543,6 +547,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
       icon: widget.icon ?? const Icon(Icons.expand_more, color: Colors.grey),
       value: yearselVal.isEmpty ? null : yearselVal,
       menuMaxHeight: widget.menuHeight,
+      dropdownColor: widget.dropdownColor,
       onChanged: (value) {
         yearsSelected(value);
       },
@@ -577,6 +582,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
       icon: widget.icon ?? const Icon(Icons.expand_more, color: Colors.grey),
       value: dayselVal.isEmpty ? null : dayselVal,
       menuMaxHeight: widget.menuHeight,
+      dropdownColor: widget.dropdownColor,
       onChanged: (value) {
         daysSelected(value);
       },
